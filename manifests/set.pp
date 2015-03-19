@@ -1,6 +1,6 @@
 # Ensures the limit is set
 
-define limits_conf::set($domain, $item, $value, $type='soft') {
+define limits_conf::set($item, $value, $domain='*', $type='soft') {
 
     include limits_conf
 
