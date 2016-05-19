@@ -19,6 +19,6 @@ define limits_conf::set($item, $value, $domain='*', $type='soft') {
             "set domain[last()]/item '${item}'",
             "set domain[last()]/value '${value}'",
         ],
-        onlyif => "match 'domain[.=\"$domain\"][./type=\"$type\" and ./item=\"$item\" and ./value=\"$value\"]' != 1",
+        onlyif => "match domain[.='${domain}'][./type='${type}' and ./item='${item}' and ./value='${value}'] size != 1",
     }
 }
